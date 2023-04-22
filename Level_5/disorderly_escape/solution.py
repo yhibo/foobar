@@ -35,7 +35,10 @@ def log_fixed(p, q):
 def solution(w, h, s):
     """Solves the problem."""
     RP = [tuple(p) for p in partitions(h)]
-    CP = [tuple(p) for p in partitions(w)]
+    CP = (
+        RP if w == h else
+        [tuple(p) for p in partitions(w)]
+    )
 
     RP_perms = {rp: num_permutations(h, rp) for rp in RP}
     CP_perms = (
