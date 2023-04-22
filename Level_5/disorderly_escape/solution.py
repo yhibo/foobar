@@ -47,5 +47,5 @@ def solution(w, h, s):
         RP_perms[rp] * CP_perms[cp] * (s ** log_fixed(rp, cp))
         for rp, cp in iproduct(RP, CP)
     )
-    
+
     return str(result // (fact(w) * fact(h)))
